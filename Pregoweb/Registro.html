@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="Registro.css">
+    <link rel="website icon" type="png" href="imagenes/Logo png.png">
+    <script src="script.js"></script>
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container front">
+        <div class="top">
+            <span>Iniciar Sesion</span>
+        </div>
+        <div class="form">
+            <form id="form-id" method="post" name="myform">
+                <div class="inputBox inputBoxFront">
+                    <label class="log"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" name="usuar" id="usuar" class="input" planceholder="ingrese usuario" required>
+                </div>
+                <div class="inputBox inputBoxFront">
+                    <label><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" name="password" id="password" class="input" planceholder="ingrese password" required>
+                </div>
+                <button type="button" class="btn" value="login" id="submit" onclick="validate()">Iniciar</button>
+                <div class="user">Nuevo Usuario? <span class="newUser">Registrate</span></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- --------------------------- back ---------------------------------- -->
+
+    <div class="container back">
+        <div class="top topBack">
+            <span>Registrarse</span>
+        </div>
+        <div class="form formBack">
+            <form>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-t"></i></label>
+                    <input type="text" placeholder="Nombre" class="input" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" placeholder="Correo" class="input" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-user"></i></label>
+                    <input type="text" placeholder="Nombre de usuario" class="input" required>
+                </div>
+                <div class="inputBox inputBoxback">
+                    <label><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" placeholder="Contraseña" class="input" required>
+                </div>
+                <button type="submit" class="btn btnBack">Registrar</button>
+                <div class="user userBack">Usuario Existente? <span class="existingUser">Iniciar</span></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let front = document.querySelector('.front');
+        let back = document.querySelector('.back');
+
+        let newUser = document.querySelector('.newUser');
+        let existingUser = document.querySelector('.existingUser');
+
+        newUser.addEventListener('click', function(){
+            front.style.zIndex = "1"
+            back.style.zIndex = "2"
+            front.style.transform = "rotateY(180deg)"
+            back.style.transform = "rotateY(0deg)"
+        })
+
+        existingUser.addEventListener('click', function(){
+            back.style.zIndex = "1"
+            front.style.zIndex = "2"
+            back.style.transform = "rotateY(180deg)"
+            front.style.transform = "rotateY(0deg)"
+        })
+    </script>
+</body>
+</html>
+
